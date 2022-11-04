@@ -57,7 +57,7 @@ string user_name2 = System.Environment.UserName;
       string exe_name = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
       string sourceFile = @"" + exe_name;
       string destinationFile = @"C:\Users\" + user_name + @"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\" + exe_name;
-      System.IO.File.Move(sourceFile, destinationFile, true);
+      System.IO.File.Move(sourceFile, destinationFile);
     }catch { }
 end auto run*/
 
